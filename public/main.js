@@ -1,4 +1,5 @@
 cytoscape.use(cytoscapeDagre);
+cytoscape.use(cytoscapeCxtmenu);
 
 var cy = cytoscape({
   container: document.getElementById('cy'),
@@ -104,4 +105,58 @@ var cy = cytoscape({
     rankDir: 'LR',
     spacingFactor: 1.5,
   },
+});
+
+let nodeMenu = cy.cxtmenu({
+  selector: 'node',
+  commands: [
+    {
+      content: '<span class="fa fa-info fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+    {
+      content: '<span class="fa fa-edit fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+    {
+      content: '<span class="fa fa-trash fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+  ],
+});
+
+let edgeMenu = cy.cxtmenu({
+  selector: 'edge',
+  commands: [
+    {
+      content: '<span class="fa fa-info fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+    {
+      content: '<span class="fa fa-plus fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+    {
+      content: '<span class="fa fa-edit fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+    {
+      content: '<span class="fa fa-trash fa-2x"></span>',
+      select: function (ele) {
+        console.log(ele.position());
+      },
+    },
+  ],
 });
