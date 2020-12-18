@@ -6,20 +6,8 @@ function initialize() {
   const app = express();
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(
-    '/cytoscape',
-    express.static(
-      path.join(__dirname, 'node_modules/cytoscape/dist/cytoscape.min.js')
-    )
-  );
-  app.use(
-    '/cytoscape-dagre',
-    express.static(
-      path.join(__dirname, 'node_modules/cytoscape-dagre/cytoscape-dagre.js')
-    )
-  );
-  app.use(
-    '/dagre',
-    express.static(path.join(__dirname, 'node_modules/dagre/dist/dagre.min.js'))
+    '/node_modules',
+    express.static(path.join(__dirname, 'node_modules'))
   );
   app.listen(port, () => console.log(`Listening on port ${port}`));
 }

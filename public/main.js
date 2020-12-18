@@ -19,6 +19,10 @@ var cy = cytoscape({
       padding: '10%',
       shape: 'round-rectangle',
       'background-color': '#fff',
+      'text-valign': 'bottom',
+      'text-halign': 'center',
+      'text-margin-y': '8px',
+      content: 'data(label)',
     })
     .selector('edge')
     .css({
@@ -66,17 +70,19 @@ var cy = cytoscape({
     }),
   elements: {
     nodes: [
-      { data: { id: 'faucet1', kind: 'faucet' } },
-      { data: { id: 'filter1', kind: 'filter' } },
-      { data: { id: 'valve1', kind: 'valve' } },
-      { data: { id: 'water-tank1', kind: 'water-tank' } },
-      { data: { id: 'gravity1', kind: 'gravity' } },
-      { data: { id: 'valve2', kind: 'valve' } },
-      { data: { id: 'splitter1', kind: 'splitter' } },
-      { data: { id: 'plant1', kind: 'plant' } },
-      { data: { id: 'plant2', kind: 'plant' } },
-      { data: { id: 'plant3', kind: 'plant' } },
-      { data: { id: 'plant4', kind: 'plant' } },
+      {
+        data: { id: 'faucet1', kind: 'faucet', label: 'Canilla #1' },
+      },
+      { data: { id: 'filter1', kind: 'filter', label: 'Filtro #1' } },
+      { data: { id: 'valve1', kind: 'valve', label: 'Valvula #1' } },
+      { data: { id: 'water-tank1', kind: 'water-tank', label: 'Tanque #1' } },
+      { data: { id: 'gravity1', kind: 'gravity', label: 'Gravedad #1' } },
+      { data: { id: 'valve2', kind: 'valve', label: 'Valvula #2' } },
+      { data: { id: 'splitter1', kind: 'splitter', label: 'Duplicador #1' } },
+      { data: { id: 'plant1', kind: 'plant', label: 'Planta #1' } },
+      { data: { id: 'plant2', kind: 'plant', label: 'Planta #2' } },
+      { data: { id: 'plant3', kind: 'plant', label: 'Planta #3' } },
+      { data: { id: 'plant4', kind: 'plant', label: 'Planta #4' } },
     ],
     edges: [
       { data: { source: 'faucet1', target: 'filter1' } },
@@ -96,5 +102,6 @@ var cy = cytoscape({
     directed: true,
     padding: 10,
     rankDir: 'LR',
+    spacingFactor: 1.5,
   },
 });
