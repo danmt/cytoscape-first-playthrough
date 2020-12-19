@@ -7,7 +7,7 @@ const createGraph = (nodes, edges) =>
     style: [
       // Style all nodes/edges
       {
-        selector: 'node',
+        selector: 'node[label]',
         style: {
           height: 80,
           width: 80,
