@@ -1,6 +1,7 @@
 function main() {
   cytoscape.use(cytoscapeDagre);
   cytoscape.use(cytoscapeCxtmenu);
+  cytoscape.use(cytoscapeEdgehandles);
 
   const app = new Application(
     createGraph(

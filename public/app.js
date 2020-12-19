@@ -4,10 +4,14 @@ class Application {
   }
 
   initialize() {
+    // Set up graph layout
     this.setupLayout();
     this.layout.run();
+    // Set up extensions
     this.setupNodeContextMenu();
     this.setupEdgeContextMenu();
+    this.setupEdgeHandles();
+    // Listen to events
     this.graph.promiseOn('add', 'node, edge').then(() => this.onElementAdded);
   }
 
@@ -69,6 +73,24 @@ class Application {
           select: (element) => this.removeElementFromGraph(element),
         },
       ],
+    });
+  }
+
+  setupEdgeHandles() {
+    this.edgeHandles = this.graph.edgehandles({
+      snap: true,
+    });
+
+    document.querySelector('#draw-on').addEventListener('click', function () {
+      eh.enableDrawMode();
+    });
+
+    document.querySelector('#draw-off').addEventListener('click', function () {
+      eh.disableDrawMode();
+    });
+
+    document.querySelector('#start').addEventListener('click', function () {
+      eh.start(cy.$('node:selected'));
     });
   }
 

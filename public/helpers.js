@@ -5,6 +5,7 @@ const createGraph = (nodes, edges) =>
     autounselectify: true,
     wheelSensitivity: 0.5,
     style: [
+      // Style all nodes/edges
       {
         selector: 'node',
         style: {
@@ -34,6 +35,7 @@ const createGraph = (nodes, edges) =>
           'target-arrow-color': '#3492eb',
         },
       },
+      // Give each node kind a background image
       {
         selector: 'node[kind = "faucet"]',
         style: {
@@ -86,6 +88,53 @@ const createGraph = (nodes, edges) =>
         selector: 'node[kind = "water-well"]',
         style: {
           'background-image': 'assets/water-well.svg',
+        },
+      },
+      // Style the edge handles extension
+      {
+        selector: '.eh-handle',
+        style: {
+          'background-color': 'red',
+          width: 12,
+          height: 12,
+          shape: 'ellipse',
+          'overlay-opacity': 0,
+          'border-width': 12, // makes the handle easier to hit
+          'border-opacity': 0,
+        },
+      },
+      {
+        selector: '.eh-hover',
+        style: {
+          'background-color': 'red',
+        },
+      },
+      {
+        selector: '.eh-source',
+        style: {
+          'border-width': 2,
+          'border-color': 'red',
+        },
+      },
+      {
+        selector: '.eh-target',
+        style: {
+          'border-width': 2,
+          'border-color': 'red',
+        },
+      },
+      {
+        selector: '.eh-preview, .eh-ghost-edge',
+        style: {
+          'line-color': 'red',
+          'target-arrow-color': 'red',
+          'source-arrow-color': 'red',
+        },
+      },
+      {
+        selector: '.eh-ghost-edge.eh-preview-active',
+        style: {
+          opacity: 0,
         },
       },
     ],
