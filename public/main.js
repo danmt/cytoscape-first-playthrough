@@ -49,9 +49,7 @@ function initialize() {
       },
       {
         content: '<span class="fa fa-trash fa-2x"></span>',
-        select: function (ele) {
-          console.log(ele.position());
-        },
+        select: removeElementFromGraph(graph),
       },
     ],
   });
@@ -79,9 +77,7 @@ function initialize() {
       },
       {
         content: '<span class="fa fa-trash fa-2x"></span>',
-        select: function (ele) {
-          console.log(ele.position());
-        },
+        select: removeElementFromGraph(graph),
       },
     ],
   });

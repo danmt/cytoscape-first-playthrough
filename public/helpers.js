@@ -79,3 +79,5 @@ const createGraph = (nodes, edges) =>
       spacingFactor: 1.5,
     },
   });
+
+const removeElementFromGraph = (graph) => (element) => graph.remove(element);
