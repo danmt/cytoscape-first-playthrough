@@ -56,7 +56,7 @@ class Drawer {
         {
           content: '<span class="fa fa-plus fa-2x"></span>',
           select: (edge) =>
-            this.addConnectedNode(edge, {
+            this.addNodeToEdge(edge, {
               id: 'faucet2',
               kind: 'faucet',
               label: 'Canilla #2',
@@ -92,7 +92,11 @@ class Drawer {
     });
   }
 
-  addConnectedNode(edge, data) {
+  addNode(data) {
+    this.graph.add({ data, group: 'nodes' });
+  }
+
+  addNodeToEdge(edge, data) {
     this.graph.remove(edge);
     this.graph.add([
       { data, group: 'nodes' },

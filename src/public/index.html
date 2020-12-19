@@ -23,9 +23,50 @@
   </head>
   <body>
     <div id="container">
-      <div id="sidebar"></div>
+      <div id="sidebar">
+        <button class="button" id="trigger" data-micromodal-trigger="modal-1">
+          Agregar componente
+        </button>
+      </div>
       <div id="cy"></div>
     </div>
+
+    <div
+      class="modal micromodal-slide"
+      id="agregar-componente-modal"
+      aria-hidden="true"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-1-title">Agregar componente</h2>
+            <button
+              class="modal__close"
+              aria-label="Close modal"
+              data-micromodal-close
+            ></button>
+          </header>
+          <main class="modal__content" id="modal-1-content">
+            <p>
+              This is me yo! Lorem ipsum dolor sit amet consectetur adipisicing
+              elit.
+            </p>
+          </main>
+          <footer class="modal__footer">
+            <button id="agregar" class="modal__btn" data-micromodal-close>
+              Agregar
+            </button>
+            <button class="modal__btn" data-micromodal-close>Cancelar</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
     <script src="helpers.js"></script>
     <script src="drawer.js"></script>
     <script src="main.js"></script>

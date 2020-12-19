@@ -99,7 +99,7 @@ const createGraph = (nodes, edges) =>
           height: 12,
           shape: 'ellipse',
           'overlay-opacity': 0,
-          'border-width': 12, // makes the handle easier to hit
+          'border-width': 12,
           'border-opacity': 0,
         },
       },

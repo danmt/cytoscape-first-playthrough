@@ -38,6 +38,22 @@ function main() {
   );
 
   drawer.initialize();
+
+  MicroModal.init({
+    onClose: (modal, element, event) => {
+      if (!event.target.id) {
+        return;
+      }
+
+      if (modal.id === 'agregar-componente-modal') {
+        drawer.addNode({});
+      }
+      console.log(modal.id);
+      console.log(event.target.id);
+    },
+    awaitCloseAnimation: true,
+    openClass: 'open',
+  });
 }
 
 main();

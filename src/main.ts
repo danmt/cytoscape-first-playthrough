@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as path from 'path';
 
 function initialize() {
   const port = 3000;
