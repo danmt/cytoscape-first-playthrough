@@ -1,4 +1,4 @@
-class Application {
+class Drawer {
   constructor(graph) {
     this.graph = graph;
   }

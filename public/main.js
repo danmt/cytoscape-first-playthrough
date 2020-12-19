@@ -3,7 +3,7 @@ function main() {
   cytoscape.use(cytoscapeCxtmenu);
   cytoscape.use(cytoscapeEdgehandles);
 
-  const app = new Application(
+  const drawer = new Drawer(
     createGraph(
       [
         {
@@ -35,7 +35,7 @@ function main() {
     )
   );
 
-  app.initialize();
+  drawer.initialize();
 }
 
 main();
