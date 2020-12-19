@@ -3,6 +3,7 @@ const createGraph = (nodes, edges) =>
     container: document.getElementById('cy'),
     boxSelectionEnabled: false,
     autounselectify: true,
+    wheelSensitivity: 0.5,
     style: [
       {
         selector: 'node',
@@ -14,7 +15,6 @@ const createGraph = (nodes, edges) =>
           'border-color': '#000',
           'border-width': 3,
           'border-opacity': 0.5,
-          'border-radius': 0,
           padding: '10%',
           shape: 'round-rectangle',
           'background-color': '#fff',
@@ -93,13 +93,4 @@ const createGraph = (nodes, edges) =>
       nodes,
       edges,
     },
-    layout: {
-      name: 'dagre',
-      directed: true,
-      padding: 10,
-      rankDir: 'LR',
-      spacingFactor: 1.5,
-    },
   });
-
-const removeElementFromGraph = (graph) => (element) => graph.remove(element);
