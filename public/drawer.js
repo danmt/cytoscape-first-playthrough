@@ -80,18 +80,6 @@ class Drawer {
     this.edgeHandles = this.graph.edgehandles({
       snap: true,
     });
-
-    document.querySelector('#draw-on').addEventListener('click', function () {
-      eh.enableDrawMode();
-    });
-
-    document.querySelector('#draw-off').addEventListener('click', function () {
-      eh.disableDrawMode();
-    });
-
-    document.querySelector('#start').addEventListener('click', function () {
-      eh.start(cy.$('node:selected'));
-    });
   }
 
   setupLayout() {
